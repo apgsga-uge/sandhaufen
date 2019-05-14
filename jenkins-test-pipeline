@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  stages {
+    stage ("TEST") {
+      parallel {
+        stage {
+          steps {
+            echo "Test 1"
+          }
+        }
+        stage {
+          script {
+            echo "Test 2"
+          }
+        }
+      }
+    }
+  }
+}     
