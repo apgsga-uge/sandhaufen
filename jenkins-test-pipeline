@@ -5,7 +5,9 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("Clone") {
-          input "waiting for Input"
+          input {
+            message "End of Clone"
+          }
         }
         stage ("2") {
           input {
