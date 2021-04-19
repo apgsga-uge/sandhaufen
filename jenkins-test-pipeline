@@ -13,6 +13,7 @@ pipeline {
             echo "waiting for ${myWaitName}"
           }
           input {
+            echo "should we continue, ${myWaitName}?"
             id "WAIT-${myWaitName}"
           }
           steps {
