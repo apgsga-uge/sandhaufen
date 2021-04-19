@@ -9,9 +9,6 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("1") {
-          steps {
-            echo "waiting for ${myWaitName}"
-          }
           input {
             message "should we continue, ${myWaitName}?"
             id "WAIT-${myWaitName}"
