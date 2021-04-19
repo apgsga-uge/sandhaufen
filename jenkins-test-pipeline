@@ -8,6 +8,7 @@ pipeline {
           input {
             message "continue after end of clone"
             submitter "svcPipelineBatchBuilder"
+            ok ""
           }
           steps {
             echo "continue"
@@ -18,6 +19,7 @@ pipeline {
             message "continue after end of log"
             id "LOG"
             submitter "svcPipelineBatchBuilder"
+            ok ""
           }
           steps {
             echo "Test 2"
