@@ -6,9 +6,8 @@ pipeline {
       parallel {
         stage ("1") {
           input {
-            message "end of clone reached..."
-            id "WAIT"
-            ok "yes"
+            message "continue after end of clone"
+            id "end-of-clone"
             submitter "svcPipelineBatchBuilder"
           }
           steps {
