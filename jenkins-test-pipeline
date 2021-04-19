@@ -5,9 +5,7 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("Clone") {
-          input {
-            message "continue after end of clone"
-          }
+          input message "wait until end"
           steps {
             echo "continue"
           }
