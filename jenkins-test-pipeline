@@ -6,9 +6,10 @@ pipeline {
       parallel {
         stage ("1") {
           input {
-            message "should we continue?"
+            message "end of clone reached..."
             id "WAIT"
-            ok "continue"
+            ok "yes"
+            submitter "svcPipelineBatchBuilder"
           }
           steps {
             echo "continue"
