@@ -15,6 +15,11 @@ pipeline {
           }
         }
         stage ("2") {
+          input {
+            message "continue after end of log"
+            id "end-of-log"
+            submitter "svcPipelineBatchBuilder"
+          }
           steps {
             echo "Test 2"
           }
