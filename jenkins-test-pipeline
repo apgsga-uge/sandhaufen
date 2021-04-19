@@ -5,7 +5,10 @@ pipeline {
       parallel {
         stage ("1") {
           steps {
-            input "Test"
+            input {
+              message "waiting for Input"
+              id "WAIT"
+              ok "go on"
           }
         }
         stage ("2") {
