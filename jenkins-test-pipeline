@@ -4,12 +4,13 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("1") {
+          input {
+            message "waiting for Input"
+            id "WAIT"
+            ok "go on"
+          }
           steps {
-            input {
-              message "waiting for Input"
-              id "WAIT"
-              ok "go on"
-            }
+            echo "continue"
           }
         }
         stage ("2") {
