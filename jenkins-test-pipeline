@@ -8,6 +8,7 @@ pipeline {
           input {
             message "should we continue?"
             id "WAIT"
+            ok "continue"
           }
           steps {
             echo "continue"
