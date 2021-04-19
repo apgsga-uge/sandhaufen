@@ -5,16 +5,18 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("Clone") {
-          try {
-            input {
-              message "continue after end of log"
-              id "CLONE"
-              submitter "svcPipelineBatchBuilder"
-            }
-          } catch (err) {
-            echo "not interested in errors"
-          }
           steps {
+            script {
+              try {
+                input {
+                  message "continue after end of log"
+                  id "CLONE"
+                  submitter "svcPipelineBatchBuilder"
+                }
+              } catch (err) {
+                echo "not interested in errors"
+              }
+            }
             echo "Clone Stage Step"
           }
         }
