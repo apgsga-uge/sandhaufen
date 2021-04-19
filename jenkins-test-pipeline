@@ -7,7 +7,7 @@ pipeline {
         stage ("1") {
           input {
             message "continue after end of clone"
-            id "end-of-clone"
+            id "CLONE"
             submitter "svcPipelineBatchBuilder"
           }
           steps {
@@ -17,7 +17,7 @@ pipeline {
         stage ("2") {
           input {
             message "continue after end of log"
-            id "end-of-log"
+            id "LOG"
             submitter "svcPipelineBatchBuilder"
           }
           steps {
