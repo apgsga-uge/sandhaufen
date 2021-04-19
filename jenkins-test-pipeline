@@ -4,11 +4,6 @@ pipeline {
   stages {
     stage ("TEST") {
       parallel {
-        stage ("Clone") {
-          input {
-            message "End of Clone"
-          }
-        }
         stage ("2") {
           input {
             message "continue after end of log"
