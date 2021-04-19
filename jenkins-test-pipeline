@@ -1,14 +1,13 @@
 pipeline {
   agent any
   
-  environment {
-		def myWaitName="Hugo"
-  }
-  
   stages {
     stage ("TEST") {
       parallel {
         stage ("1") {
+          environment {
+	    def myWaitName="Hugo"
+          }
           input {
             message "should we continue, ${myWaitName}?"
             id "WAIT-${myWaitName}"
