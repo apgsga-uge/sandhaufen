@@ -4,15 +4,17 @@ pipeline {
   stages {
     stage ("TEST") {
       parallel {
-        stage ("2") {
+        stage ("Clone") {
           input {
             message "continue after end of log"
-            id "LOG"
+            id "CLONE"
             submitter "svcPipelineBatchBuilder"
-            ok ""
+            parameters {
+               string(name: 'result', defaultValue: 'notok', description: 'how did the clone run?')
+            }
           }
           steps {
-            echo "Test 2"
+            echo "Clone was ${result}"
           }
         }
         stage ("3") {
