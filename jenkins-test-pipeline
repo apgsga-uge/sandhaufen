@@ -5,12 +5,9 @@ pipeline {
     stage ("TEST") {
       parallel {
         stage ("1") {
-          environment {
-	    def myWaitName="Hugo"
-          }
           input {
-            message "should we continue, ${myWaitName}?"
-            id "WAIT-${myWaitName}"
+            message "should we continue?"
+            id "WAIT"
           }
           steps {
             echo "continue"
